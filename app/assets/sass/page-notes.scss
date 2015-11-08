@@ -1,0 +1,40 @@
+// Page notes
+
+
+.page-notes{
+	position: fixed;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    summary{
+    	color: transparent;
+    	&::-webkit-details-marker{
+    		display: none;
+    	}
+    	&:focus{
+		    outline: none;
+		}
+		&:hover{
+    		font-weight: bold;	
+    		color: white;
+		}
+    }
+}
+
+.page-notes[open]{
+    left: 75%;
+
+    summary{
+    	color: $text-colour;
+    	font-weight: bold;	
+    }
+
+	h2{
+		@extend .heading-small;
+	}
+}
+
+.js-show-notes{
+	// Left align the page, so the notes don't obscure page content
+	margin-right: 25%;
+}

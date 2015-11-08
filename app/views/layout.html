@@ -10,7 +10,15 @@
 
 {{$headerClass}}with-proposition{{/headerClass}}
 
+{{$bodyClasses}}js-show-notes{{/bodyClasses}}
+
 {{$bodyEnd}}
+
+<details class="page-notes">
+	<summary>Notes</summary>
+	{{$pageNotes}}{{/pageNotes}}
+</details>
+
   {{>includes/scripts}}
 {{/bodyEnd}}
 
