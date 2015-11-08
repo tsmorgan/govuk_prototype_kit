@@ -2,39 +2,78 @@
 
 
 .page-notes{
-	position: fixed;
-    top: 0;
-    right: 0;
-    padding: 15px;
-    summary{
-    	color: transparent;
-    	&::-webkit-details-marker{
-    		display: none;
-    	}
-    	&:focus{
-		    outline: none;
-		}
-		&:hover{
-    		font-weight: bold;	
-    		color: white;
-		}
-    }
+	display: none;
+	h2{
+		margin-top: 15px;
+	}
 }
 
-.page-notes[open]{
-    left: 75%;
-
-    summary{
-    	color: $text-colour;
-    	font-weight: bold;	
-    }
-
-	h2{
-		@extend .heading-small;
+.js-show-notes{
+	.page-notes{
+		display: block;
+		position: fixed;
+	    top: 0;
+	    left: 75%;
+	    padding: 0 20px;	
 	}
+}
+
+.page-notes-toggle{
+	position: fixed;
+	right: 0;
+	top: 15px;
+	color: #454a4c;
+	text-decoration: underline;
+	//margin-top: -$gutter;
+	padding: 0 $gutter;
+	z-index: 999;
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+.js-notes-toggle-show{
+	display: inline;
+}
+.js-notes-toggle-hide{
+	display: none;
 }
 
 .js-show-notes{
 	// Left align the page, so the notes don't obscure page content
 	margin-right: 25%;
+
+	.js-notes-toggle-show{
+		display: none;
+	}
+	.js-notes-toggle-hide{
+		display: inline;
+	}
+}
+
+.note-marker:before{
+	display: none;
+}
+
+.js-show-notes .note-marker{
+	&::before{
+		content: "1";
+		display: block;
+		color: white;
+		background-color: $mellow-red;
+		font-weight: bold;
+		border-radius: 20px;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		font-size: 18px;
+		left: -25px;
+	};
+}
+
+.page-notes .note-marker{
+	margin-left: 25px;	&::before{
+		position: relative;
+		top: 21px;
+	};
 }

@@ -10,14 +10,19 @@
 
 {{$headerClass}}with-proposition{{/headerClass}}
 
-{{$bodyClasses}}js-show-notes{{/bodyClasses}}
+{{$bodyClasses}}{{/bodyClasses}}
+
+{{$footerTop}}
+<div class="page-notes-toggle">
+	<span class="js-notes-toggle-show">Show</span> <span class="js-hidden">or</span> <span class="js-notes-toggle-hide">Hide</span>  notes
+</div>
+{{/footerTop}}
 
 {{$bodyEnd}}
-
-<details class="page-notes">
-	<summary>Notes</summary>
+<div class="page-notes">
+	<h2 class="heading-small">Page notes</h2>
 	{{$pageNotes}}{{/pageNotes}}
-</details>
+</div>
 
   {{>includes/scripts}}
 {{/bodyEnd}}
